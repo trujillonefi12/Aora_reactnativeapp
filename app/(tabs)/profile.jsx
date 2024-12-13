@@ -4,11 +4,11 @@ import React from 'react'
 const profile = () => {
   return (
     <View>
-      <Text>profile</Text>
+      <Text>Profile</Text>
     </View>
   )
 }
 
 export default profile
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({}) 
