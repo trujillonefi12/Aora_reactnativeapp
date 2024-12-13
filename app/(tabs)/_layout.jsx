@@ -2,19 +2,26 @@ import { View, Text, Image } from "react-native";
 import React from "react";
 import { Tabs, Redirect } from "expo-router";
 import { icons } from "../../constants";
+//import { Loader } from "../../components";
+//import { useGlobalContext } from "../../context/GlobalProvider";
 
 const TabIcon = ({ icon, color, name, focused }) => {
   return (
-    <View className="items-center justify-center gap-2">
+    <View className="items-center justify-center gap-2" style={{ flex: 1 }}>
       <Image
         source={icon}
         resizeMode="contain"
         tintColor={color}
-        className="w-6 h-6"
+        className="w-5 h-5"
       />
       <Text
-        className={`${focused ? "font-psemibold" : "font-pregular"} text-xs`}
-        style={{ color: color }}
+        style={{
+          color: color,
+          fontWeight: focused ? "600" : "400", // Use React Native styles directly
+          fontSize: 10, // Replace text-xs with an explicit font size
+        }}
+        //className={`${focused ? "font-psemibold" : "font-pregular"} text-xs`}
+        //style={{ color: color }}
       >
         {name}
       </Text>
@@ -23,6 +30,9 @@ const TabIcon = ({ icon, color, name, focused }) => {
 };
 
 const TabsLay = () => {
+  //const { loading, isLogged } = useGlobalContext();
+
+  //if (!loading && !isLogged) return <Redirect href="/sign-in" />;
   return (
     <>
       <Tabs
@@ -34,7 +44,7 @@ const TabsLay = () => {
             backgroundColor: "#161622",
             borderTopWidth: 1,
             borderTopColor: "#232533",
-            height: 84,
+            height: 83,
           },
         }}
       >
@@ -105,3 +115,5 @@ const TabsLay = () => {
 
 export default TabsLay;
 //50
+//<Loader isLoading={loading} />
+//<StatusBar backgroundColor="#161622" style="light" />
