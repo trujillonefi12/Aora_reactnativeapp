@@ -33,6 +33,10 @@ const RootLayout = () => {
         name="index"
         options={{ headerShown: false }}
       ></Stack.Screen>
+      <Stack.Screen
+        name="(auth)"
+        options={{ headerShown: false }}
+      ></Stack.Screen>
     </Stack>
   );
 };
